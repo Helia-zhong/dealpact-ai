@@ -1,0 +1,28 @@
+{
+  "verifiedAt": "2026-10-25T06:42:49.155Z",
+  "environment": "sandbox",
+  "baseUrl": "https://api-m.sandbox.paypal.com",
+  "oauth": {
+    "httpStatus": 200,
+    "debugId": "ca4ff3e3cad9e"
+  },
+  "order": {
+    "httpStatus": 201,
+    "id": "6TM797598B043574B",
+    "status": "CREATED",
+    "debugId": "ca4ff3e3ff914"
+  },
+  "captureRequested": false,
+  "workbenchToolCheck": {
+    "verifiedAt": "2026-10-25T06:50:14.666Z",
+    "connection": "CONNECTED",
+    "tool": "paypal_create_order",
+    "httpStatus": 200,
+    "orderId": "1J122814B0998473S",
+    "orderStatus": "PAYER_ACTION_REQUIRED",
+    "debugId": "ca4ff4648eeff",
+    "failedQaHeld": true,
+    "afterRemediation": "AWAITING_APPROVAL",
+    "outboundCaptureRequests": 0
+  }
+}

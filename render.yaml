@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: dealpact-ai
+    runtime: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 24.16.0
+      - key: HOST
+        value: 0.0.0.0
+      - key: PAYPAL_ENV
+        value: sandbox
+      - key: PAYPAL_SIMULATION
+        value: "false"
+      - key: PAYPAL_CLIENT_ID
+        sync: false
+      - key: PAYPAL_CLIENT_SECRET
+        sync: false
