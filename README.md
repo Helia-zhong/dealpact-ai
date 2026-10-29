@@ -6,6 +6,8 @@ DealPact AI is a B2B agentic commerce workbench for milestone-based software eng
 
 **PayPal AI Hackathon 2026 · MIT licensed · English UI and documentation**
 
+**Live demo:** [dealpact-ai.onrender.com](https://dealpact-ai.onrender.com) · **Health:** [/api/health](https://dealpact-ai.onrender.com/api/health)
+
 ## Problem statement
 
 Small businesses and independent vendors manage a single engagement across proposals, chat, source code, invoices, and payment dashboards. Buyers need evidence that the work meets the agreement; vendors need a clear path to payment; finance needs to reconcile delivery with settlement.
