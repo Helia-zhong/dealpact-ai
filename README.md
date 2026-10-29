@@ -300,6 +300,8 @@ The check asserted live mode, HTTP 201, a provider order ID, and a non-simulated
 
 The running workbench was also checked through its UI: negotiation invoked `paypal_create_order` with the real Checkout Migration amounts (M1 `$1,800`, M2 `$1,575`, M3 `$1,125`). Auto-Pilot created three live Sandbox orders, attempted capture for M1, verified its still-unapproved order, and displayed a `$1,800.00` `RELEASED_SIMULATED` bridge receipt while keeping the PayPal approval link. The UI displayed **LIVE PAYPAL SANDBOX**, the ledger displayed the Agent Tool and PayPal Debug ID columns, the desktop workspace used two equal columns, and the ledger used AG Grid auto-height without a blank gap.
 
+**Public Render deployment verified on 2026-10-29:** the hosted service authenticated with PayPal Sandbox and created USD 1,800.00 order `39610118KG256740X`. The provider returned HTTP **200** with `PAYER_ACTION_REQUIRED` and debug ID `f4869898884af`; the application preserved that actual response. Failed QA blocked capture with HTTP 409, a corrected deliverable scored 100/100, and a live capture attempt returned HTTP 422 `ORDER_NOT_APPROVED`. A subsequent live order lookup verified the order before the app issued its explicitly simulated bridge receipt. The ledger reported USD 1,800 simulated released and USD 0 live released. Sanitized evidence is in [test/render-deployment-verification.json](test/render-deployment-verification.json).
+
 ## Operating limits
 
 - **Sandbox only:** no production funds move. “Held” is an application state; a `CAPTURE` order does not reserve funds or create a regulated escrow account.

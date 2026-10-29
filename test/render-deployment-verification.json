@@ -1,0 +1,54 @@
+{
+  "verifiedAt": "2026-10-29T14:28:49.361Z",
+  "publicUrl": "https://dealpact-ai.onrender.com",
+  "repository": "https://github.com/Helia-zhong/dealpact-ai",
+  "render": {
+    "serviceId": "srv-dbhkn80n74is73ea5t50",
+    "deploymentId": "dep-dbhlbqifngtc73bvdj20",
+    "commit": "15b678904aca830ed8aed070f8de9e9be6532cfc",
+    "status": "live"
+  },
+  "paypal": {
+    "environment": "sandbox",
+    "mode": "LIVE_PAYPAL_SANDBOX",
+    "oauth": {
+      "httpStatus": 200,
+      "debugId": "f100679dbef54",
+      "credentialsRedacted": true
+    },
+    "order": {
+      "id": "39610118KG256740X",
+      "httpStatus": 200,
+      "status": "PAYER_ACTION_REQUIRED",
+      "debugId": "f4869898884af",
+      "amount": "1800.00",
+      "currency": "USD",
+      "returnUrl": "https://dealpact-ai.onrender.com/api/paypal/return"
+    },
+    "captureAttempt": {
+      "httpStatus": 422,
+      "issue": "ORDER_NOT_APPROVED",
+      "debugId": "f6072482662e0"
+    },
+    "verifiedOrderLookup": {
+      "httpStatus": 200,
+      "debugId": "f6072482a3908"
+    }
+  },
+  "qa": {
+    "failedScore": 20,
+    "blockedCaptureHttpStatus": 409,
+    "passingScore": 100
+  },
+  "settlement": {
+    "status": "RELEASED_SIMULATED",
+    "receiptId": "SIM-BRIDGE-3465412121B1BF3D0BA3",
+    "realPayPalCaptureId": null,
+    "simulatedReleasedAmount": 1800,
+    "liveReleasedAmount": 0
+  },
+  "notes": [
+    "PayPal returned HTTP 200 with PAYER_ACTION_REQUIRED for order creation; this report preserves the actual provider response.",
+    "The bridge receipt is issued by DealPact AI and represents simulated settlement, not a completed PayPal capture."
+  ]
+}

@@ -822,7 +822,7 @@ function bindEvents() {
   });
   $('#auto-capture').addEventListener('change', (event) => recordActivity('Automatic capture preference changed', { enabled: event.target.checked }));
   $('#negotiate').addEventListener('click', () => perform('Negotiation', async () => { resetSteps(); await negotiate(); $('#workflow-message').textContent = state.pact.milestones[0].order ? 'Smart pact agreed. First milestone order created.' : 'Smart pact agreed. Retry order creation in the payment console.'; notify('Smart pact agreed. Your milestones are in the ledger.'); }));
-  $('#create-order').addEventListener('click', () => perform('Order creation', async () => { await makeOrder(); notify('PayPal order created · 201 Created.'); }));
+  $('#create-order').addEventListener('click', () => perform('Order creation', async () => { const order = await makeOrder(); notify(`PayPal order created · ${order.httpStatus} ${order.httpStatus === 201 ? 'Created' : 'OK'}${order.simulated ? ' · simulated' : ''}.`); }));
   $('#run-audit').addEventListener('click', () => perform('QA audit', async () => { const result = await runAudit(); notify(`QA ${result.audit.decision} · ${result.audit.score}/100`); }));
   $('#capture-order').addEventListener('click', () => perform('Capture', capturePayout));
   $('#autopilot').addEventListener('click', () => perform('Auto-Pilot', autoPilot));
